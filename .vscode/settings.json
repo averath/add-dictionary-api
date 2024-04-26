@@ -1,0 +1,12 @@
+{
+    "eslint.alwaysShowStatus": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    // turn it off for JS and JSX, we will do this via eslint
+    "[typescript]": {
+        "editor.formatOnSave": true
+    },
+    // tell the ESLint plugin to run on save
+    "editor.codeActionsOnSave": ["source.fixAll.format", "source.fixAll.eslint"]
+}
+

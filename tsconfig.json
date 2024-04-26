@@ -1,0 +1,56 @@
+{
+    "compilerOptions": {
+        "target": "es2020",
+        "module": "es2020",
+        "allowJs": true,
+        "maxNodeModuleJsDepth": 0,
+        "lib": ["es2020", "dom"],
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "outDir": "./dist",
+        "rootDir": ".",
+        "moduleResolution": "Node",
+        "removeComments": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "noImplicitThis": true,
+        "strict": true,
+        "useUnknownInCatchVariables": false,
+        // "noUnusedLocals": true,
+        // "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "resolveJsonModule": true,
+        "baseUrl": ".",
+        "typeRoots": ["node_modules/@types"],
+        "types": ["reflect-metadata", "jest"],
+        "paths": {
+            "App/*": ["./src/*"],
+            "config/*": ["./src/config/*"],
+            "controllers/*": ["./src/controllers/*"],
+            "repositories/*": ["./src/repositories/*"],
+            "schemas/*": ["./src/schemas/*"],
+            "types/*": ["./src/types/*"],
+            "services/*": ["src/services/*"],
+            "middlewares/*": ["./src/middlewares/*"],
+            "routes/*": ["./src/routes/*"],
+            "utils/*": ["./src/utils/*"],
+            "public/*": ["./src/public/*"],
+            "database/*": ["./src/database/*"]
+        }
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "commonjs"
+        },
+        "esm": false,
+        "require": ["tsconfig-paths/register"]
+    },
+    "exclude": ["node_modules", "__tests__", "dist"],
+    "include": ["src", "package.json"]
+}
