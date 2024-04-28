@@ -10,7 +10,8 @@ import morgan from 'morgan';
 import repositories from 'repositories/index';
 
 import { v4 } from 'uuid';
-import handleCorsError from './middlewares/handleCorsError';
+import handleCorsError from './middlewares/handle-cors-error';
+import dictionariesRoutes from './routes/dictionaries-routes';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const expressip = require('express-ip');
@@ -160,6 +161,6 @@ app.use('*', (req, res, next) => {
 });
 
 //  Connect all our routes to our application
-app.use('/', [globalRoutes]);
+app.use('/', [globalRoutes, dictionariesRoutes]);
 
 export default app;

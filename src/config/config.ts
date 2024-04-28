@@ -9,6 +9,7 @@ dotenv.config({ path: envPath });
 
 export const PORT = process.env.PORT;
 export const MODE = process.env.ENV;
+export const RECAPTCHA_SECRET_BACKEND = process.env.RECAPTCHA_SECRET_BACKEND;
 
 //PRODUCTION
 
