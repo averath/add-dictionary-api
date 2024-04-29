@@ -11,6 +11,7 @@ type AddDictionaryType = {
     email: string;
     content: string;
     terms: boolean | string;
+    code?: string;
     recaptchaToken?: string;
 };
 
@@ -22,7 +23,7 @@ class DictionaryService {
         try {
             const errors: errorsType[] = [];
             const dictionaryRepository = new DictionaryRepository(db);
-            const { recaptchaToken, terms, content, ...rest } = data;
+            const { recaptchaToken, terms, content, code, ...rest } = data;
             const isRecaptchaValid =
                 MODE === 'production'
                     ? await validateRecaptcha(recaptchaToken ?? '')

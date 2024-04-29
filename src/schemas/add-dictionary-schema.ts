@@ -6,11 +6,18 @@ let schema: Record<string, Joi.AnySchema> = {
     emailAddress: Joi.string().email().trim().required().messages({
         'string.email': 'Invalid email address',
         'any.required': requiredMessage,
+        'string.empty': requiredMessage,
     }),
 
     content: Joi.string().trim().required().messages({
         'string.base': 'Invalid content',
         'any.required': requiredMessage,
+        'string.empty': requiredMessage,
+    }),
+    code: Joi.string().trim().messages({
+        'string.base': 'Invalid code',
+        'any.required': requiredMessage,
+        'string.empty': requiredMessage,
     }),
 
     terms: Joi.boolean().invalid(false).required().messages({
@@ -20,10 +27,11 @@ let schema: Record<string, Joi.AnySchema> = {
     }),
 };
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV === 'production') {
     schema.recaptchaToken = Joi.string().required().messages({
         'string.base': 'Invalid ReCaptcha token',
         'any.required': requiredMessage,
+        'string.empty': requiredMessage,
     });
 }
 
