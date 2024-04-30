@@ -1,7 +1,14 @@
 import Joi, { ObjectSchema } from 'joi';
 
 const requiredMessage = 'This field is required.';
-
+export const allowedTargetLanguages = [
+    'German',
+    'Polish',
+    'French',
+    'Italian',
+    'Spanish',
+];
+export const allowedSourceLanguages = ['English'];
 let schema: Record<string, Joi.AnySchema> = {
     emailAddress: Joi.string().email().trim().required().messages({
         'string.email': 'Invalid email address',
@@ -19,6 +26,22 @@ let schema: Record<string, Joi.AnySchema> = {
         'any.required': requiredMessage,
         'string.empty': requiredMessage,
     }),
+    sourceLanguage: Joi.string()
+        .valid(...allowedSourceLanguages)
+        .required()
+        .messages({
+            'any.only': 'Invalid language',
+            'any.required': requiredMessage,
+            'string.empty': requiredMessage,
+        }),
+    targetLanguage: Joi.string()
+        .valid(...allowedTargetLanguages)
+        .required()
+        .messages({
+            'any.only': 'Invalid language',
+            'any.required': requiredMessage,
+            'string.empty': requiredMessage,
+        }),
 
     terms: Joi.boolean().invalid(false).required().messages({
         'boolean.base': 'Invalid format',

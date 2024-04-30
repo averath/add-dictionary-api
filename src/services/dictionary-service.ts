@@ -41,6 +41,7 @@ class DictionaryService {
 
             const dataToSave = {
                 ...rest,
+                accessCode: code,
                 txtDocument: content,
                 ip: reqInfo.ip_address,
             };
