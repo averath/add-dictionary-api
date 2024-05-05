@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import { MODE } from 'config/config';
 import cookieParser from 'cookie-parser';
 import cors, { CorsOptions } from 'cors';
