@@ -1,3 +1,4 @@
+import { MODE } from 'App/config/config';
 import Joi, { ObjectSchema } from 'joi';
 
 const requiredMessage = 'This field is required.';
@@ -50,7 +51,7 @@ let schema: Record<string, Joi.AnySchema> = {
     }),
 };
 
-if (process.env.NODE_ENV === 'production') {
+if (MODE === 'production') {
     schema.recaptchaToken = Joi.string().required().messages({
         'string.base': 'Invalid ReCaptcha token',
         'any.required': requiredMessage,
