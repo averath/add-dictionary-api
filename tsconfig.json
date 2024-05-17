@@ -28,7 +28,7 @@
         "resolveJsonModule": true,
         "baseUrl": ".",
         "typeRoots": ["node_modules/@types", "node_modules/reflect-metadata"],
-        "types": ["reflect-metadata", "jest"],
+        "types": [ "jest"],
         "paths": {
             "App/*": ["./src/*"],
             "config/*": ["./src/config/*"],

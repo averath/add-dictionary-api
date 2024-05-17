@@ -1,4 +1,3 @@
-import 'reflect-metadata';
 import { MODE } from 'config/config';
 import cookieParser from 'cookie-parser';
 import cors, { CorsOptions } from 'cors';
@@ -125,10 +124,9 @@ globalRoutes.get(['/api'], (req, res) => {
 });
 app.use('/api/public', express.static(`${__dirname}/public`));
 
-const whitelist = ['https://kraftmachines.pl'];
+const whitelist = ['https://readings.pl'];
 
 const corsOptions: CorsOptions = {
-    exposedHeaders: ['Authorization', 'Set-cookie'],
     credentials: true,
 
     methods: ['GET', 'POST', 'DELETE', 'PUT'],

@@ -1,4 +1,4 @@
-import Dictionary from 'App/controllers/Dictionary';
+import Dictionary from 'App/controllers/dictionary';
 import { Router } from 'express';
 
 const dictionariesRoutes = Router();
